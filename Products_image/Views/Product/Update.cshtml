@@ -1,0 +1,29 @@
+﻿﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Products_image.Models.Products;
+
+<div class="container">
+    <div class="row">
+        <form method="post" enctype="multipart/form-data">
+            <h1>Update Products</h1>
+            <div class="mb-3">
+                <label class="form-label">Product_Name</label>
+                <input type="text" class="form-control" asp-for="ProdName" value="@ViewBag.updateprod.ProdName">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Product_Description</label>
+                <input type="text" class="form-control" asp-for="ProdDesc" value="@ViewBag.updateprod.ProdDesc">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Product_Price</label>
+                <input type="text" class="form-control" asp-for="ProdPrice" value="@ViewBag.updateprod.ProdPrice">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Product_Image</label>
+                <input type="file" class="form-control" asp-for="ProdImage" name="prodImage" value="@ViewBag.updateprod.ProdImage">
+            </div>
+            <button type="submit" class="btn btn-primary">Update Form</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <h1>View Products</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Product_Name</th>
+                    <th>Product_Description</th>
+                    <th>Product_Price</th>
+                    <th>Images</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var prod in ViewBag.Products)
+                {
+
+                    <tr>
+                        <th>@prod.Id</th>
+                        <td>@prod.ProdName</td>
+                        <td>@prod.ProdDesc</td>
+                        <td>@prod.ProdPrice</td>
+                        <td><img src="~/image/@prod.ProdImagePath" width="40px"></td>
+                        <td>
+                            <a class="btn btn-danger" asp-controller="Product" asp-action="Delete" asp-route-Id="@prod.Id">Delete</a>
+                            <a class="btn btn-primary" asp-controller="Product" asp-action="Update" asp-route-Id="@prod.Id">Update</a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
